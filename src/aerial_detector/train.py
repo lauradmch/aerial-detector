@@ -1,9 +1,12 @@
 """Train YOLOv8n on the DIOR-R subset with MLflow tracking."""
-from pathlib import Path
+import os
 import yaml
 import mlflow
 from ultralytics import YOLO
+from pathlib import Path
 
+
+os.environ["MLFLOW_ALLOW_FILE_STORE"] = "true"
 
 CONFIG_PATH = Path("configs/dataset.yaml")
 
@@ -16,7 +19,7 @@ HYPERPARAMS = {
     "batch": 16,
     "lr0": 0.01,
     "patience": 5,
-    "project": "runs/detect",
+    "project": str(Path("runs/detect").absolute()),
     "name": "baseline",
 }
 
