@@ -25,10 +25,6 @@ htmlcov/
 *.env
 kaggle.json
 
-# --- OS ---
-Thumbs.db
-.DS_Store
-
 # --- IDE ---
 .idea/
 
