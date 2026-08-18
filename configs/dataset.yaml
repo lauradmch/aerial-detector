@@ -1,0 +1,8 @@
+  path: ../data/prepared
+  train: images/train
+  val: images/val
+  nc: 3
+  names:
+    0: airplane
+    1: ship
+    2: vehicle

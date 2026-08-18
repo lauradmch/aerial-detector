@@ -6,7 +6,11 @@ authors = [
     { name = "Laura", email = "llaura.domenech@gmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "numpy>=2.4.6",
+    "opencv-python>=5.0.0.93",
+    "scikit-learn>=1.9.0",
+]
 
 [project.scripts]
 aerial-detector = "aerial_detector:main"
@@ -14,3 +18,11 @@ aerial-detector = "aerial_detector:main"
 [build-system]
 requires = ["uv_build>=0.12.2,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "kaggle>=2.2.4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aerial_detector"]
