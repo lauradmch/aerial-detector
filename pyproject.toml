@@ -10,6 +10,7 @@ dependencies = [
     "numpy>=2.4.6",
     "opencv-python>=5.0.0.93",
     "scikit-learn>=1.9.0",
+    "ultralytics>=8.4.121",
 ]
 
 [project.scripts]
@@ -22,7 +23,18 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "kaggle>=2.2.4",
+    "pytest>=9.1.1",
+    "ruff>=0.16.3",
 ]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/aerial_detector"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM"]
+# E,F = erreurs pycodestyle/pyflakes ; I = import order ; N = naming
+# UP = pyupgrade ; B = bugbear (patterns risqués) ; SIM = simplify
