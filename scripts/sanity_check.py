@@ -1,6 +1,8 @@
 """Draw YOLO HBB boxes on a few prepared images to verify the conversion."""
-from pathlib import Path
+
 import random
+from pathlib import Path
+
 import cv2
 
 IMAGES = Path("data/prepared/images/train")
@@ -25,8 +27,9 @@ for img_path in sample:
         x1, y1 = int(cx - bw / 2), int(cy - bh / 2)
         x2, y2 = int(cx + bw / 2), int(cy + bh / 2)
         cv2.rectangle(img, (x1, y1), (x2, y2), COLORS[cid], 2)
-        cv2.putText(img, CLASS_NAMES[cid], (x1, y1 - 5),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, COLORS[cid], 2)
+        cv2.putText(
+            img, CLASS_NAMES[cid], (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, COLORS[cid], 2
+        )
     cv2.imwrite(str(OUTPUT / img_path.name), img)
 
 print(f"Wrote {len(sample)} images to {OUTPUT}")

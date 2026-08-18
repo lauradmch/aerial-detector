@@ -1,6 +1,8 @@
 """Run best.pt on 10 val images and save annotated results."""
-from pathlib import Path
+
 import random
+from pathlib import Path
+
 from ultralytics import YOLO
 
 WEIGHTS = Path("runs/detect/baseline/weights/best.pt")
@@ -18,8 +20,8 @@ sample = random.sample(list(VAL_IMAGES.glob("*.jpg")), 10)
 for img_path in sample:
     results = model.predict(
         source=str(img_path),
-        conf=0.25,           # seuil de confiance minimum
-        save=True,          # draw predicted boxes
+        conf=0.25,  # seuil de confiance minimum
+        save=True,  # draw predicted boxes
         project=str(OUTPUT.absolute()),
         name="",
         exist_ok=True,
