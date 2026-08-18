@@ -15,11 +15,11 @@ Fine-tuning YOLOv8n sur un sous-ensemble DIOR-R (3 classes : airplane, ship, veh
 
 Exemple qualitatif (GT en vert, prédictions en rouge) :
 
-![GT vs Pred sample](assets/gt_vs_pred_sample.png)
+![GT vs Pred sample](assets/gt_vs_pred_sample.jpg)
 
 ## Analyse d'erreurs
 
-Cinq modes d'échec identifiés (détails complets dans [NOTES.md](NOTES.md)) :
+Cinq modes d'échec identifiés (détails complets dans [notes.md](notes.md)) :
 
 1. **Petits objets (recall vehicle 0.37)** : véhicules < 15 px non détectés à cause du stride 32 de YOLOv8n. Confirmé visuellement sur images haute altitude.
 2. **FP airplane sur marquages au sol** (croix, T) : signature de forme insuffisamment discriminante.
