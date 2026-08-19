@@ -15,7 +15,9 @@ Fine-tuning YOLOv8n sur un sous-ensemble DIOR-R (3 classes : airplane, ship, veh
 
 Exemple qualitatif (GT en vert, prédictions en rouge) :
 
-![GT vs Pred sample](assets/gt_vs_pred_sample.jpg)
+<p align="center">
+  <img src="assets/gt_vs_pred_sample.jpg" width="500" alt="GT vs Pred sample">
+</p>
 
 ## Analyse d'erreurs
 
@@ -53,14 +55,17 @@ uv run ruff check .
 ```
 
 ## Structure
+
+```
 aerial-detector/
 ├── src/aerial_detector/ # data.py, train.py, evaluate.py, visualize.py
 ├── tests/ # tests pytest sur les fonctions pures
 ├── configs/dataset.yaml # config dataset Ultralytics
 ├── scripts/ # sanity check + viz qualitative
 ├── outputs/ # métriques JSON + images annotées
-├── NOTES.md # analyse détaillée + prépa entretien
+├── NOTES.md # analyse détaillée + observations
 └── pyproject.toml # deps + config ruff + pytest
+```
 
 
 ## Choix techniques et trade-offs
